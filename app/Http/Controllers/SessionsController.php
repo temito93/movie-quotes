@@ -26,4 +26,12 @@ class SessionsController extends Controller
 
 		return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('input');
 	}
+
+	//Logout
+	public function destroy()
+	{
+		auth()->logout();
+
+		return redirect('/login');
+	}
 }
