@@ -7,7 +7,7 @@ use Illuminate\Console\Command;
 
 class PasswordReset extends Command
 {
-	protected $signature = 'creset:password';
+	protected $signature = 'reset:password';
 
 	protected $description = 'Reset user password.';
 
