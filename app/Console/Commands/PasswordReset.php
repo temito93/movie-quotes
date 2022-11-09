@@ -7,25 +7,10 @@ use Illuminate\Console\Command;
 
 class PasswordReset extends Command
 {
-	/**
-	 * The name and signature of the console command.
-	 *
-	 * @var string
-	 */
 	protected $signature = 'creset:password';
 
-	/**
-	 * The console command description.
-	 *
-	 * @var string
-	 */
 	protected $description = 'Reset user password.';
 
-	/**
-	 * Execute the console command.
-	 *
-	 * @return int
-	 */
 	public function handle()
 	{
 		$email = $this->ask('Enter email of user');

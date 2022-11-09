@@ -7,25 +7,10 @@ use Illuminate\Console\Command;
 
 class AdminsCreate extends Command
 {
-	/**
-	 * The name and signature of the console command.
-	 *
-	 * @var string
-	 */
 	protected $signature = 'admins:create';
 
-	/**
-	 * The console command description.
-	 *
-	 * @var string
-	 */
 	protected $description = 'Create a new admin user';
 
-	/**
-	 * Execute the console command.
-	 *
-	 * @return int
-	 */
 	public function handle()
 	{
 		$name = $this->ask('Name');
