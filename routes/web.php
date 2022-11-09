@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 	return view('welcome');
 });
+
+//Show Login Form
+Route::get('/login', [SessionsController::class, 'create'])->middleware('guest');
