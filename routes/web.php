@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SessionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,6 @@ Route::get('/', function () {
 
 //Show Login Form
 Route::get('/login', [SessionsController::class, 'create'])->middleware('guest');
+
+//Login User
+Route::post('/sessions', [SessionsController::class, 'authenticate'])->middleware('guest');
