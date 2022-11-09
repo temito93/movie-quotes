@@ -23,3 +23,6 @@ Route::get('/login', [SessionsController::class, 'create'])->middleware('guest')
 
 //Login User
 Route::post('/sessions', [SessionsController::class, 'authenticate'])->middleware('guest');
+
+//Logout User
+Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth');
