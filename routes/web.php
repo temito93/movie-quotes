@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LangController;
+use App\Http\Controllers\MoviesController;
+use App\Http\Controllers\QuotesController;
 use App\Http\Controllers\SessionsController;
 
 /*
