@@ -21,7 +21,7 @@ class SessionsController extends Controller
 		{
 			request()->session()->regenerate();
 
-			return redirect('/admin');
+			return redirect('/admin/main/en');
 		}
 
 		return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('input');
