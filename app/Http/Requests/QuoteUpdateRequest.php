@@ -6,25 +6,18 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class QuoteUpdateRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
-    {
-        return false;
-    }
+	public function authorize()
+	{
+		return true;
+	}
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, mixed>
-     */
-    public function rules()
-    {
-        return [
-            //
-        ];
-    }
+	public function rules()
+	{
+		return [
+			'body_eng'  => ['required', 'regex:/(^[A-Za-z0-9!?_ ]+$)/'],
+			'body_geo'  => ['required', 'regex:/(^[ა-ჰ0-9!?_ ]+$)/'],
+			'movies_id' => ['required'],
+			'image'     => ['image'],
+		];
+	}
 }
