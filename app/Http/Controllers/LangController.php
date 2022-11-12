@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class LangController extends Controller
 {
-    //
+	public function ge()
+	{
+		App::setLocale('ge');
+	}
+
+	public function en()
+	{
+		App::setLocale(('en'));
+	}
 }
