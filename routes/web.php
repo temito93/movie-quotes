@@ -70,4 +70,4 @@ Route::delete('/admin/{locale}/{quote}/delete_quote', [QuotesController::class, 
 Route::get('/admin/ge', [LangController::class, 'ge'])->middleware('auth');
 
 //Eng Locale
-Route::get('/admin/en', [LangController::class, 'ge'])->middleware('auth');
+Route::get('/admin/en', [LangController::class, 'en'])->middleware('auth');
