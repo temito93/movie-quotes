@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Movies;
+use App\Models\Movie;
 use Illuminate\Support\Facades\App;
 
 class AdminController extends Controller
@@ -12,7 +12,7 @@ class AdminController extends Controller
 	{
 		App::setLocale($locale);
 		return view('admin.index', [
-			'movies' => Movies::latest()->get(),
+			'movies' => Movie::latest()->get(),
 		]);
 	}
 }

@@ -11,7 +11,7 @@ class QuoteUpdateRequest extends FormRequest
 		return [
 			'body_eng'  => ['required', 'regex:/(^[A-Za-z0-9!?_ ]+$)/'],
 			'body_geo'  => ['required', 'regex:/(^[ა-ჰ0-9!?_ ]+$)/'],
-			'movies_id' => ['required'],
+			'movie_id'  => ['required'],
 			'image'     => ['image'],
 		];
 	}

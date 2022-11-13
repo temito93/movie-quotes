@@ -2,7 +2,7 @@
     <section>
         <h2 class="uppercase font-semibold mb-5 text-xl">{{__('admin.movies')}}</h2>
         @php
-            $movies = App\Models\Movies::latest()->paginate(5);
+            $movies = App\Models\Movie::latest()->paginate(5);
         @endphp
 
            @if($movies->count())

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Movies;
+use App\Models\Movie;
 use Illuminate\Support\Facades\App;
 use App\Http\Requests\MovieValidateRequest;
 use Illuminate\Support\Facades\Config;
@@ -14,7 +14,7 @@ class MoviesController extends Controller
 	{
 		App::setLocale($locale);
 		return view('main.index', [
-			'movies' => Movies::latest()->get(),
+			'movies' => Movie::latest()->get(),
 		]);
 	}
 
@@ -23,7 +23,7 @@ class MoviesController extends Controller
 	{
 		App::setLocale($locale);
 		return view('admin.movies.create', [
-			'movies' => Movies::latest()->get(),
+			'movies' => Movie::latest()->get(),
 		]);
 	}
 
@@ -34,7 +34,7 @@ class MoviesController extends Controller
 		$title_eng = $request->validated('title_eng');
 		$title_geo = $request->validated('title_geo');
 
-		$movie = new Movies();
+		$movie = new Movie();
 
 		$translations = [['en' => ucwords($title_eng), 'ge' => $title_geo]];
 		$movie->setTranslations('title', $translations);
@@ -45,7 +45,7 @@ class MoviesController extends Controller
 	}
 
 	//Delete Movie
-	public function destroy($locale, Movies $movie)
+	public function destroy($locale, Movie $movie)
 	{
 		App::setLocale($locale);
 		$movie->delete();
@@ -54,7 +54,7 @@ class MoviesController extends Controller
 	}
 
 	//Update Movie
-	public function update($locale, MovieValidateRequest $request, Movies $movie)
+	public function update($locale, MovieValidateRequest $request, Movie $movie)
 	{
 		App::setLocale($locale);
 		$title_eng = $request->validated('title_eng');
@@ -70,7 +70,7 @@ class MoviesController extends Controller
 	}
 
 	//Show Movie Edit Form
-	public function edit($locale, Movies $movie)
+	public function edit($locale, Movie $movie)
 	{
 		App::setLocale($locale);
 		return view('admin.movies.edit', [

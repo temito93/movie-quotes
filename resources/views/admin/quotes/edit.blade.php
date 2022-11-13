@@ -24,8 +24,8 @@
             @php foreach($movie_name as $current_movie)@endphp
             <p class="mb-3">{{ __("admin.movieName") }}</p>
             <select
-                name="movies_id"
-                id="movies_id"
+                name="movie_id"
+                id="movie_id"
                 class="border outline-none px-2 py-2 cursor-pointer mb-5 w-full"
             >
                 <option value="{{$current_movie->id}}" selected>

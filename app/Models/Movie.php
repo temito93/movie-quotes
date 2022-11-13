@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 
-class Movies extends Model
+class Movie extends Model
 {
 	use HasTranslations;
 
@@ -15,6 +15,6 @@ class Movies extends Model
 
 	public function quotes()
 	{
-		return $this->hasMany(Quotes::class);
+		return $this->hasMany(Quote::class);
 	}
 }

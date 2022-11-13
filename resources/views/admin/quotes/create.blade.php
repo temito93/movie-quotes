@@ -6,7 +6,7 @@
             <x-form.input name="body_eng" value="{{old('body_eng')}}">Quote Name</x-form.input>
             <x-form.input name="body_geo" value="{{old('body_geo')}}">ციტატის სახელი</x-form.input>
             <x-form.input name="image" value="" type="file">{{__('admin.uploadImg')}}</x-form.input>
-            <select name="movies_id" required id="movies_id" class="border outline-none px-2 py-2 cursor-pointer w-full">
+            <select name="movie_id" required id="movie_id" class="border outline-none px-2 py-2 cursor-pointer w-full">
                 <option value="option_select" disabled selected>{{__('admin.selectMovie')}}</option>
                     @foreach($movies as $movie)
                         <option value="{{$movie->id}}">{{$movie->getTranslations('title')[0]['en']}}</option>
