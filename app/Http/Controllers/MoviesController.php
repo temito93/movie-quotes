@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Movies;
 use Illuminate\Support\Facades\App;
 use App\Http\Requests\MovieValidateRequest;
+use Illuminate\Support\Facades\Config;
 
 class MoviesController extends Controller
 {
@@ -40,7 +41,7 @@ class MoviesController extends Controller
 
 		$movie->save();
 
-		return redirect('/admin/main/' . $locale);
+		return redirect()->route('dashboard', ['locale' => Config::get('app.locale')]);
 	}
 
 	//Delete Movie
@@ -49,7 +50,7 @@ class MoviesController extends Controller
 		App::setLocale($locale);
 		$movie->delete();
 
-		return redirect('/admin/main/' . $locale);
+		return redirect()->route('dashboard', ['locale' => Config::get('app.locale')]);
 	}
 
 	//Update Movie
@@ -65,7 +66,7 @@ class MoviesController extends Controller
 
 		$movie->save();
 
-		return redirect('/admin/main/' . $locale);
+		return redirect()->route('dashboard', ['locale' => Config::get('app.locale')]);
 	}
 
 	//Show Movie Edit Form

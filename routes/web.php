@@ -19,7 +19,7 @@ use App\Http\Controllers\SessionsController;
 */
 
 //Home Page
-Route::get('/', [MoviesController::class, 'show']);
+Route::get('/', [MoviesController::class, 'show'])->name('homepage');
 
 //Show Login Form
 Route::get('/login', [SessionsController::class, 'create'])->middleware('guest')->name('login');
@@ -37,10 +37,10 @@ Route::get('/admin/main/{locale}', [AdminController::class, 'show'])->middleware
 Route::delete('/admin/{locale}/{movie}/delete', [MoviesController::class, 'destroy'])->middleware('auth');
 
 //Show Movie Edit Form
-Route::get('/admin/{locale}/{movie}/edit', [MoviesController::class, 'edit'])->middleware('auth');
+Route::get('/admin/{locale}/{movie}/edit', [MoviesController::class, 'edit'])->middleware('auth')->name('movie_edit');
 
 //Show Upload Movie Form
-Route::get('/admin/{locale}/upload-movie', [MoviesController::class, 'index'])->middleware('auth');
+Route::get('/admin/{locale}/upload-movie', [MoviesController::class, 'index'])->middleware('auth')->name('movie_upload');
 
 //Update Movie
 Route::patch('/admin/{locale}/{movie}/update', [MoviesController::class, 'update'])->middleware('auth');
@@ -49,13 +49,13 @@ Route::patch('/admin/{locale}/{movie}/update', [MoviesController::class, 'update
 Route::post('/admin/{locale}/movies', [MoviesController::class, 'store'])->middleware('auth');
 
 //Show All Quotes
-Route::get('/admin/{locale}/quotes', [QuotesController::class, 'index'])->middleware('auth');
+Route::get('/admin/{locale}/quotes', [QuotesController::class, 'index'])->middleware('auth')->name('show_quotes');
 
 //Show Quotes Upload Form
-Route::get('/admin/{locale}/upload-quotes', [QuotesController::class, 'show'])->middleware('auth');
+Route::get('/admin/{locale}/upload-quotes', [QuotesController::class, 'show'])->middleware('auth')->name('quote_upload');
 
 //Edit Quote Form
-Route::get('/admin/{locale}/{quote}/edit_quote', [QuotesController::class, 'edit'])->middleware('auth');
+Route::get('/admin/{locale}/{quote}/edit_quote', [QuotesController::class, 'edit'])->middleware('auth')->name('quote_edit');
 
 //Upload Quote
 Route::post('/admin/{locale}/quotes', [QuotesController::class, 'store'])->middleware('auth');

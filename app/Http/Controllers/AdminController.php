@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\App;
 class AdminController extends Controller
 {
 	//Show Admin Dashboard
-	public function show($lang)
+	public function show($locale)
 	{
-		App::setLocale($lang);
+		App::setLocale($locale);
 		return view('admin.index', [
 			'movies' => Movies::latest()->get(),
 		]);

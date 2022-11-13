@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Movies;
 use App\Models\Quotes;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Config;
 use App\Http\Requests\QuoteUpdateRequest;
 use App\Http\Requests\ValidateQuoteRequest;
 
@@ -59,7 +60,7 @@ class QuotesController extends Controller
 			'image'     => $image,
 		]);
 
-		return redirect('/admin/' . $locale . '/quotes');
+		return redirect()->route('show_quotes', ['locale' => Config::get('app.locale')]);
 	}
 
 	//Update Quote
@@ -89,7 +90,7 @@ class QuotesController extends Controller
 			'image'     => $image,
 		]);
 
-		return redirect('/admin/' . $locale . '/quotes');
+		return redirect()->route('show_quotes', ['locale' => Config::get('app.locale')]);
 	}
 
 	//Delete Quote
@@ -98,6 +99,6 @@ class QuotesController extends Controller
 		App::setLocale($locale);
 		$quote->delete();
 
-		return redirect('/admin/' . $locale . '/quotes');
+		return redirect()->route('show_quotes', ['locale' => Config::get('app.locale')]);
 	}
 }
