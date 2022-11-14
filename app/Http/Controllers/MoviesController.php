@@ -3,20 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
-use Illuminate\Support\Facades\App;
-use App\Http\Requests\MovieValidateRequest;
 use App\Models\Quote;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
+use App\Http\Requests\MovieValidateRequest;
 
 class MoviesController extends Controller
 {
 	//Show All Movies
-	public function show($locale)
+	public function show($locale, Quote $quote, Movie $movie)
 	{
 		App::setLocale($locale);
+		$curQuote = $quote::all()->random(1);
+		$curMovie = $movie->get()->where('id', $curQuote[0]->movie_id);
+
 		return view('main.index', [
-			'movies'  => Movie::latest()->get(),
-			'quote'   => Quote::all()->random(1),
+			'movies'  => $curMovie,
+			'quote'   => $curQuote,
 		]);
 	}
 

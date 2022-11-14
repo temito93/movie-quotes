@@ -3,8 +3,7 @@
     @foreach($quote as $curQuote) @endforeach
 
     @php
-        $filteredMovie = $movies->where('id', $curQuote->movie_id);
-        foreach($filteredMovie as $currentMovie)
+        foreach($movies as $currentMovie)
     @endphp
 
 
