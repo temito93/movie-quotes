@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Movie;
 use Illuminate\Support\Facades\App;
 use App\Http\Requests\MovieValidateRequest;
+use App\Models\Quote;
 use Illuminate\Support\Facades\Config;
 
 class MoviesController extends Controller
@@ -14,7 +15,8 @@ class MoviesController extends Controller
 	{
 		App::setLocale($locale);
 		return view('main.index', [
-			'movies' => Movie::latest()->get(),
+			'movies'  => Movie::latest()->get(),
+			'quote'   => Quote::all()->random(1),
 		]);
 	}
 
