@@ -6,17 +6,12 @@ use App\Http\Controllers\LangController;
 use App\Http\Controllers\MoviesController;
 use App\Http\Controllers\QuotesController;
 use App\Http\Controllers\SessionsController;
+use Illuminate\Support\Facades\Config;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+//Redirect
+Route::get('/', function () {
+	return redirect('/home/' . Config::get('app.locale'));
+});
 
 //Home Page
 Route::get('/home/{locale}', [MoviesController::class, 'show'])->name('homepage');
