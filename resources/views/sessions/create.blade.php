@@ -16,8 +16,8 @@
                 <form class="space-y-6" action="/sessions" method="POST">
                     @csrf
 
-                    <x-form.input name="email" />
-                    <x-form.input name="password" type="password" />
+                    <x-form.input name="email">Email</x-form.input>
+                    <x-form.input name="password" type="password">Password</x-form.input>
 
                     <div>
                         <button

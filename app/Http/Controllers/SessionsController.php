@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ValidateUserRequest;
+use Illuminate\Support\Facades\Config;
 
 class SessionsController extends Controller
 {
@@ -21,7 +22,7 @@ class SessionsController extends Controller
 		{
 			request()->session()->regenerate();
 
-			return redirect('/admin');
+			return redirect()->route('dashboard', ['locale' => Config::get('app.locale')]);
 		}
 
 		return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('input');
@@ -32,6 +33,6 @@ class SessionsController extends Controller
 	{
 		auth()->logout();
 
-		return redirect('/login');
+		return redirect()->route('login');
 	}
 }
