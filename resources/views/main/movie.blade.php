@@ -3,9 +3,6 @@
         foreach($movie as $currentMovie)
     @endphp
 
-
-
-
     <div class="ml-[40%] translate-x-[-40%] mt-20">
         <p class=" text-white text-5xl mb-20">
                 @if(Config::get('app.locale') == 'en')
