@@ -9,7 +9,7 @@
 
 
     <div class="left-10 absolute ml-[50%] translate-x-[-50%]">
-            <img src="{{asset('storage/' . $curQuote->image)}}" alt="" width="700" height="386">
+            <img src="{{asset('storage/' . $curQuote->image)}}" alt="" width="700" height="386" class="rounded-[10px]">
             <p class="text-white text-5xl mt-16 text-center">”
                 @if(Config::get('app.locale') == 'en')
                     {{$curQuote->getTranslations('body')[0]['en']}}
