@@ -71,5 +71,6 @@ Route::get('/admin/ge', [LangController::class, 'ge'])->middleware('auth');
 Route::get('/admin/en', [LangController::class, 'en'])->middleware('auth');
 
 //Homepage Locale
-Route::get('/home/ge', [LangController::class, 'homeGe'])->name('ge');
-Route::get('/home/en', [LangController::class, 'homeEn'])->name('en');
+
+Route::get('/home/en/{locale}', [LangController::class, 'homeEn'])->name('lang_en');
+Route::get('/home/geo/{locale}', [LangController::class, 'homeGe'])->name('lang_ge');
