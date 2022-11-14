@@ -12,7 +12,7 @@ class AdminController extends Controller
 	{
 		App::setLocale($locale);
 		return view('admin.index', [
-			'movies' => Movie::latest()->get(),
+			'movies' => Movie::latest()->paginate(5),
 		]);
 	}
 }
