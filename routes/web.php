@@ -19,7 +19,7 @@ use App\Http\Controllers\SessionsController;
 */
 
 //Home Page
-Route::get('/', [MoviesController::class, 'show'])->name('homepage');
+Route::get('/home/{locale}', [MoviesController::class, 'show'])->name('homepage');
 
 //Show Login Form
 Route::get('/login', [SessionsController::class, 'create'])->middleware('guest')->name('login');
