@@ -19,12 +19,10 @@ class LangController extends Controller
 	public function homeGe()
 	{
 		App::setLocale('ge');
-		return redirect('/ge');
 	}
 
 	public function homeEn()
 	{
 		App::setLocale('en');
-		return redirect('/en');
 	}
 }
