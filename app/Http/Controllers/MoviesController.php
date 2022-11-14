@@ -20,6 +20,16 @@ class MoviesController extends Controller
 		]);
 	}
 
+	//Show Movie With Quotes
+	public function movie($locale, Movie $movie, $id)
+	{
+		App::setLocale($locale);
+		return view('main.movie', [
+			'movie'  => $movie->get(),
+			'quotes' => Quote::get()->where('movie_id', $id),
+		]);
+	}
+
 	//Show Movie Upload Form
 	public function index($locale)
 	{

@@ -16,6 +16,9 @@ Route::get('/', function () {
 //Home Page
 Route::get('/home/{locale}', [MoviesController::class, 'show'])->name('homepage');
 
+//Home Movie Page With Quotes
+Route::get('/home/{locale}/movie/{id}', [MoviesController::class, 'movie']);
+
 //Show Login Form
 Route::get('/login', [SessionsController::class, 'create'])->middleware('guest')->name('login');
 

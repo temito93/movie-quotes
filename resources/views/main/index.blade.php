@@ -1,4 +1,4 @@
-<x-home.container>
+<x-home.container class="h-screen">
 
     @foreach($quote as $curQuote) @endforeach
 
@@ -20,7 +20,7 @@
                 @endif
             ”</p>
             <p class="text-center text-white text-5xl underline mt-28">
-                <a href="">
+                <a href="/home/{{Config::get('app.locale')}}/movie/{{$currentMovie->id}}">
                     @if(Config::get('app.locale') == 'en')
                         {{$currentMovie->getTranslations('title')[0]['en']}}
                     @endif

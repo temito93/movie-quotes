@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="bg-neutral-600 h-screen flex items-center">
+    <div {{$attributes->merge(['class' => "bg-neutral-600  flex items-center"])}}>
            <div>
 
                 <div class="ml-14">
