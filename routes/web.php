@@ -17,6 +17,8 @@ Route::get('/', function () {
 Route::prefix('/home')->group(function () {
 	Route::get('/{locale}', [MoviesController::class, 'show'])->name('homepage');
 	Route::get('/{locale}/movie/{id}', [MoviesController::class, 'movie']);
+	Route::get('/en/{locale}', [LangController::class, 'homeEn'])->name('lang_en');
+	Route::get('/geo/{locale}', [LangController::class, 'homeGe'])->name('lang_ge');
 });
 
 //Show Login Form
@@ -51,7 +53,3 @@ Route::prefix('/admin')->group(function () {
 	Route::get('/ge', [LangController::class, 'ge'])->middleware('auth');
 	Route::get('/en', [LangController::class, 'en'])->middleware('auth');
 });
-
-//Homepage Locale
-Route::get('/home/en/{locale}', [LangController::class, 'homeEn'])->name('lang_en');
-Route::get('/home/geo/{locale}', [LangController::class, 'homeGe'])->name('lang_ge');
