@@ -88,5 +88,5 @@ php artisan reset:password
 ##
 ## Login Url
 ```bash
-    127.0.0.1:port/login
+127.0.0.1:port/login
 ```
