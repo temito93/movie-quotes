@@ -85,3 +85,8 @@ You can reset password of user by executing command in terminal:
 ```bash
 php artisan reset:password
 ```
+##
+## Login Url
+```bash
+    127.0.0.1:port/login
+```
