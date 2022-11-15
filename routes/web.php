@@ -48,13 +48,9 @@ Route::prefix('/admin')->group(function () {
 			Route::delete('/delete_quote', [QuotesController::class, 'destroy'])->middleware('auth');
 		});
 	});
+	Route::get('/ge', [LangController::class, 'ge'])->middleware('auth');
+	Route::get('/en', [LangController::class, 'en'])->middleware('auth');
 });
-
-//Geo Locale
-Route::get('/admin/ge', [LangController::class, 'ge'])->middleware('auth');
-
-//Eng Locale
-Route::get('/admin/en', [LangController::class, 'en'])->middleware('auth');
 
 //Homepage Locale
 Route::get('/home/en/{locale}', [LangController::class, 'homeEn'])->name('lang_en');
