@@ -39,7 +39,13 @@ and also:
 ```bash 
 npm run dev
 ```
-4. Now you should provide .env file all the necessary environment variables:
+
+4. Now we need to set our env file. Go to the root of your project and execute this command.
+```bash
+cp .env.example .env
+```
+
+5. Now you should provide .env file all the necessary environment variables:
 ```bash
 DB_CONNECTION=mysql
 
