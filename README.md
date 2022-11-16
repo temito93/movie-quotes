@@ -25,7 +25,7 @@ In Movie Quotes App you can see randomly generated quotes with movie name.
 
 ## Tech Stack
 * [Laravel@9.x](https://laravel.com/docs/9.x/releases) - back-end framework
-*  [Spatie Translatable](https://spatie.be/docs/laravel-translatable/v6/introduction) - package for translation
+* [Spatie Translatable](https://spatie.be/docs/laravel-translatable/v6/introduction) - package for translation
 * [Tailwind Css@3.x](https://tailwindcss.com/docs/installation) - package for styling
 
 ##
@@ -96,7 +96,7 @@ npm run dev
 
 ## Mysql Diagram
 [View Diagram](https://drawsql.app/teams/redberry-33/diagrams/movies-quote)
-![diagram](/public/readme/sql-diagram.png)
+![diagram](./readme/sql-diagram.png)
 
 
 ## 
