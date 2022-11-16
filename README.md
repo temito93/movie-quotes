@@ -83,7 +83,7 @@ npm run dev
 
 ## Mysql Diagram
 [View Diagram](https://drawsql.app/teams/redberry-33/diagrams/movies-quote)
-![diagram]('/public/readme/sql-diagram.png')
+![diagram](/public/readme/sql-diagram.png)
 
 
 ## 
