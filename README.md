@@ -1,6 +1,19 @@
 # Movie Quotes
 
 In Movie Quotes App you can see randomly generated quotes with movie name.
+##
+## Table of Contents
+* [Prerequisites](#prerequisites)
+* [Tech Stack](#tech-stack)
+* [Getting Started](#getting-started)
+* [Migrations](#migration)
+* [Development](#development)
+* [Mysql Diagram](#mysql-diagram)
+* [Register Admin User](#register-admin-user)
+* [Reset User Password](#reset-user-password)
+* [Login Url](#login-url)
+
+##
 
 ## Prerequisites
 * PHP@8.0.2
