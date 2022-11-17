@@ -31,7 +31,7 @@ Route::post('/sessions', [SessionsController::class, 'authenticate'])->middlewar
 Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
 //Admin
-Route::prefix('/admin')->group(function () {
+Route::prefix('/admin')->middleware('setLocale')->group(function () {
 	Route::get('/main/{locale}', [AdminController::class, 'show'])->middleware('auth')->name('dashboard');
 	Route::prefix('/{locale}/{movie}')->group(function () {
 		Route::delete('/delete', [MoviesController::class, 'destroy'])->middleware('auth');
@@ -50,6 +50,6 @@ Route::prefix('/admin')->group(function () {
 			Route::delete('/delete_quote', [QuotesController::class, 'destroy'])->middleware('auth');
 		});
 	});
-	Route::get('/ge', [LangController::class, 'ge'])->middleware('auth');
-	Route::get('/en', [LangController::class, 'en'])->middleware('auth');
+	Route::get('/main/ge', [LangController::class, 'ge'])->middleware('auth');
+	Route::get('/main/en', [LangController::class, 'en'])->middleware('auth');
 });
