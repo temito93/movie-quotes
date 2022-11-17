@@ -33,6 +33,6 @@ class SessionsController extends Controller
 	{
 		auth()->logout();
 
-		return redirect()->route('login');
+		return redirect()->route('homepage', ['locale' => Config::get('app.locale')]);
 	}
 }
