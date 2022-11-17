@@ -51,12 +51,12 @@
                 </div>
                 <div class="mb-28 flex justify-between w-24 mx-auto">
                     <div
-                        class="text-white border rounded-full px-2 cursor-pointer"
+                        class="{{Config::get('app.locale') == 'ge' ? 'text-neutral-900 bg-white' : 'text-white'}} border rounded-full px-2 cursor-pointer"
                     >
                         <a href="/admin/main/ge">ka</a>
                     </div>
                     <div
-                        class="text-white border rounded-full px-2 cursor-pointer"
+                        class="{{Config::get('app.locale') == 'en' ? 'text-neutral-900 bg-white' : 'text-white'}} border rounded-full px-2 cursor-pointer"
                     >
                         <a href="/admin/main/en">en</a>
                     </div>
