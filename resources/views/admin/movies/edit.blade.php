@@ -13,12 +13,12 @@
             <x-form.input
                 name="title_eng"
                 value="{{$movies->getTranslations('title')[0]['en']}}"
-                >New name</x-form.input
+                >{{__('admin.newMovieNameEn')}}</x-form.input
             >
             <x-form.input
                 name="title_geo"
                 value="{{$movies->getTranslations('title')[0]['ge']}}"
-                >ახალი სახელი</x-form.input
+                >{{__('admin.newMovieNameGe')}}</x-form.input
             >
         </div>
 

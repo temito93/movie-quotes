@@ -13,12 +13,12 @@
             <x-form.input
                 name="body_eng"
                 value="{{$quote->getTranslations('body')[0]['en']}}"
-                >Quote Name</x-form.input
+                >{{__('admin.newQuoteNameEn')}}</x-form.input
             >
             <x-form.input
                 name="body_geo"
                 value="{{$quote->getTranslations('body')[0]['ge']}}"
-                >ციტატის სახელი</x-form.input
+                >{{__('admin.newQuoteNameGe')}}</x-form.input
             >
 
             @php foreach($movie_name as $current_movie)@endphp
@@ -29,7 +29,13 @@
                 class="border outline-none px-2 py-2 cursor-pointer mb-5 w-full"
             >
                 <option value="{{$current_movie->id}}" selected>
+                    @if(Config::get('app.locale') == 'en')
                     {{ ucwords($current_movie->getTranslations('title')[0]['en']) }}
+                    @endif
+
+                    @if(Config::get('app.locale') == 'ge')
+                    {{ ucwords($current_movie->getTranslations('title')[0]['ge']) }}
+                    @endif
                 </option>
                 @foreach($movies as $movie)
                 <option value="{{$movie->id}}">
