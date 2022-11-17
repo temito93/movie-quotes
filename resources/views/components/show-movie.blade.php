@@ -24,9 +24,16 @@
             method="POST"
         >
             @csrf @method('DELETE')
-            <button type="submit" class="text-red-500 hover:text-red-900">
+            @if(Config::get('app.locale') == 'en')
+            <button type="submit" class="text-red-500 hover:text-red-900" onclick="return confirm('Are you sure to delete?')">
                 {{ __("admin.delete") }}
             </button>
+            @endif
+            @if(Config::get('app.locale') == 'ge')
+            <button type="submit" class="text-red-500 hover:text-red-900" onclick="return confirm('დარწმუნებული ხართ რომ გსურთ წაშლა?')">
+                {{ __("admin.delete") }}
+            </button>
+            @endif
         </form>
     </div>
 </div>
