@@ -21,9 +21,16 @@
                     @endforeach
 
             </select>
-                @error('movies_id')
-                <p class="text-red-500 text-sm mt-2">{{ $message = 'Movie is required'}}</p>
-                @enderror
+            @error('movie_id')
+            @foreach($errors->get('movie_id') as $error) @endforeach
+                <p class="text-red-500 text-sm mt-2">
+                    @if(Config::get('app.locale') == 'ge')
+                        {{$error['movieGe']}}
+                        @else
+                        {{$error['movieEn']}}
+                    @endif
+                </p>
+            @enderror
             <div class="mt-5">
                 <x-form.button>{{__('admin.upload')}}</x-button>
             </div>
