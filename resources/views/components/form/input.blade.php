@@ -14,7 +14,15 @@
             value="{{ $value }}"
         />
     </div>
-    @error($name)
-    <p class="text-red-500 text-sm mt-2">{{ $message }}</p>
-    @enderror
+            @error($name)
+                @foreach($errors->get($name) as $error) @endforeach
+                    <p class="text-red-500 text-sm mt-2">
+                        @if(Config::get('app.locale') == 'ge')
+                            {{$error['ge']}}
+                            @else
+                            {{$error['en']}}
+                        @endif
+                    </p>
+            @enderror
+
 </div>
