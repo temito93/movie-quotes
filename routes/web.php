@@ -50,6 +50,4 @@ Route::prefix('/admin')->middleware('setLocale')->group(function () {
 			Route::delete('/delete_quote', [QuotesController::class, 'destroy'])->middleware('auth');
 		});
 	});
-	Route::get('/main/ge', [LangController::class, 'ge'])->middleware('auth');
-	Route::get('/main/en', [LangController::class, 'en'])->middleware('auth');
 });
