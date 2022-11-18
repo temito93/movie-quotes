@@ -29,7 +29,7 @@ class MoviesController extends Controller
 	{
 		App::setLocale($locale);
 		return view('main.movie', [
-			'movie'  => $movie->get(),
+			'movie'  => $movie->get()->where('id', $id),
 			'quotes' => Quote::get()->where('movie_id', $id),
 		]);
 	}
