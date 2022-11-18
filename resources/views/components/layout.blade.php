@@ -7,7 +7,7 @@
         @vite('resources/css/app.css')
         <title>Movies</title>
     </head>
-    <body>
+    <body {{$attributes->merge(['class'])}}>
         {{ $slot }}
     </body>
 </html>

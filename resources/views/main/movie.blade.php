@@ -1,9 +1,9 @@
-<x-home.container>
+<x-home.container class="flex justify-center items-center">
     @php
         foreach($movie as $currentMovie)
     @endphp
 
-    <div class="ml-[40%] translate-x-[-40%] mt-20">
+    <div class="ml-[40%] translate-x-[-40%] mt-[79px]">
         <p class=" text-white text-5xl mb-20">
                 @if(Config::get('app.locale') == 'en')
                     {{$currentMovie->getTranslations('title')[0]['en']}}

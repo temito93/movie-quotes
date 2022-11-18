@@ -17,8 +17,6 @@ Route::get('/', function () {
 Route::prefix('/home')->group(function () {
 	Route::get('/{locale}', [MoviesController::class, 'show'])->name('homepage');
 	Route::get('/{locale}/movie/{id}', [MoviesController::class, 'movie']);
-	Route::get('/en/{locale}', [LangController::class, 'homeEn'])->name('lang_en');
-	Route::get('/geo/{locale}', [LangController::class, 'homeGe'])->name('lang_ge');
 });
 
 //Show Login Form

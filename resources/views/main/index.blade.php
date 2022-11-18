@@ -1,6 +1,4 @@
-<x-home.container class="h-screen">
-
-
+<x-home.container class="h-screen flex items-center">
     <div class="left-10 absolute ml-[50%] translate-x-[-50%]">
         @if($quote->count())
         @foreach($quote as $curQuote) @endforeach
@@ -8,7 +6,7 @@
         @php
             foreach($movies as $currentMovie)
         @endphp
-        <img src="{{asset('storage/' . $curQuote->image)}}" alt="" width="700" height="386" class="rounded-[10px]">
+        <img src="{{asset('storage/' . $curQuote->image)}}" alt=""  class="w-[700px] h-[386px] rounded-[10px]">
         <p class="text-white text-5xl mt-16 text-center">”
             @if(Config::get('app.locale') == 'en')
                 {{$curQuote->getTranslations('body')[0]['en']}}
