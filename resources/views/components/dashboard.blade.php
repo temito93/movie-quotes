@@ -1,5 +1,14 @@
 <x-layout>
-    @php $locale = Config::get('app.locale'); @endphp
+    @php
+        $locale = Config::get('app.locale');
+        $thisUrl = url()->current().'/';
+        if (app()->getlocale() == 'en') {
+            $newUrl  = str_replace('/en/', '/ge/', $thisUrl);
+        }else{
+            $newUrl  = str_replace('/ge/', '/en/', $thisUrl);
+        }
+    @endphp
+
     <div>
         <div class="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
             <div
@@ -42,16 +51,17 @@
                         </a>
                     </nav>
                 </div>
+
                 <div class="mb-28 flex justify-between w-24 mx-auto">
                     <div
                         class="{{Config::get('app.locale') == 'ge' ? 'text-neutral-900 bg-white' : 'text-white'}} border rounded-full px-2 cursor-pointer"
                     >
-                        <a href="/admin/main/ge">ka</a>
+                        <a href="{{ $newUrl }}">ka</a>
                     </div>
                     <div
                         class="{{Config::get('app.locale') == 'en' ? 'text-neutral-900 bg-white' : 'text-white'}} border rounded-full px-2 cursor-pointer"
                     >
-                        <a href="/admin/main/en">en</a>
+                        <a href="{{ $newUrl }}">en</a>
                     </div>
                 </div>
             </div>
