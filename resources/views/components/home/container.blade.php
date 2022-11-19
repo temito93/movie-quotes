@@ -1,7 +1,9 @@
 <x-layout class="bg-neutral-600">
+
     @php $thisUrl = url()->current().'/'; $newUrlEn = str_replace('/ge/',
     '/en/', $thisUrl); $newUrlGe = str_replace('/en/', '/ge/', $thisUrl);
     @endphp
+
     <div {{$attributes->
         merge(['class'])}}>
         <div class="fixed top-2/4 left-12">
