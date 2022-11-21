@@ -14,9 +14,9 @@ class MoviesController extends Controller
 	public function show($locale, Quote $quote, Movie $movie)
 	{
 		App::setLocale($locale);
-
-		$curQuote = $quote::all()->count() ? $quote::all()->random(1) : $quote::all();
-		$curMovie = $quote::all()->count() ? $movie->get()->where('id', $curQuote[0]->movie_id) : $movie::all();
+        $quoteAll = $quote::all();
+		$curQuote =  $quoteAll->count() ?  $quoteAll->random(1) :  $quoteAll;
+		$curMovie =  $quoteAll->count() ? $movie->get()->where('id', $curQuote[0]->movie_id) : $movie::all();
 
 		return view('main.index', [
 			'movies'  => $curMovie,
