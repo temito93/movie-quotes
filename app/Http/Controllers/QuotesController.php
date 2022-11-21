@@ -37,7 +37,7 @@ class QuotesController extends Controller
 		return view('admin.quotes.edit', [
 			'quote'      => $quote,
 			'movies'     => $movies->get(),
-			'movie_name' => $movies->get()->where('id', $quote->movie_id),
+			'movie_name' => $movies->where('id', $quote->movie_id)->get(),
 		]);
 	}
 

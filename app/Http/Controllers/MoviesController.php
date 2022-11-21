@@ -29,8 +29,8 @@ class MoviesController extends Controller
 	{
 		App::setLocale($locale);
 		return view('main.movie', [
-			'movie'  => $movie->get()->where('id', $id),
-			'quotes' => Quote::get()->where('movie_id', $id),
+			'movie'  => $movie->where('id', $id)->get(),
+			'quotes' => Quote::where('movie_id', $id)->get(),
 		]);
 	}
 
