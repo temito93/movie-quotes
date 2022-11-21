@@ -8,14 +8,8 @@
 
     <a href="" class="truncate">
         @if(Config::get('app.locale') == 'en')
-        @if(strlen($movie->getTranslations('title')[0]['en']) > 20)
-        {{substr($movie->getTranslations('title')[0]['en'], 0, 20)."..."}}
-        @else
         {{$movie->getTranslations('title')[0]['en']}}
-        @endif @endif @if(Config::get('app.locale') == 'ge')
-        @if(mb_strlen($movie->getTranslations('title')[0]['ge']) > 20)
-        {{mb_substr($movie->getTranslations('title')[0]['ge'], 0, 20)."..."}}
-        @else
+        @endif @if(Config::get('app.locale') == 'ge')
         {{$movie->getTranslations('title')[0]['ge']}}
         @endif @endif
     </a>

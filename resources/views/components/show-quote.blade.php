@@ -1,18 +1,12 @@
 @props(['quotes']) @foreach($quotes as $quote)
 <div class="flex justify-between border py-2 px-4 items-center mb-3">
     <img src="{{asset('storage/' . $quote->image)}}" alt="" width="100" />
-    <a href="" class="truncate">
+    <a href="">
         @if(Config::get('app.locale') == 'en')
-        @if(strlen($quote->getTranslations('body')[0]['en']) > 40)
-        {{substr($quote->getTranslations('body')[0]['en'], 0, 40)."..."}}
-        @else
         {{$quote->getTranslations('body')[0]['en']}}
-        @endif @endif @if(Config::get('app.locale') == 'ge')
-        @if(mb_strlen($quote->getTranslations('body')[0]['ge']) > 40)
-        {{mb_substr($quote->getTranslations('body')[0]['ge'], 0, 40)."..."}}
-        @else
+        @endif @if(Config::get('app.locale') == 'ge')
         {{$quote->getTranslations('body')[0]['ge']}}
-        @endif @endif
+        @endif
     </a>
     <div class="flex">
         <a
