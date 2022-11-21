@@ -9,9 +9,7 @@ use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Config;
 
 //Redirect
-Route::get('/', function () {
-	return redirect('/home/' . Config::get('app.locale'));
-});
+Route::redirect('/', 'home/'.Config::get('app.locale'));;
 
 //Home Page
 Route::prefix('/home')->group(function () {
