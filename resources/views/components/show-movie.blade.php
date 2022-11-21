@@ -11,7 +11,7 @@
         {{$movie->getTranslations('title')[0]['en']}}
         @endif @if(Config::get('app.locale') == 'ge')
         {{$movie->getTranslations('title')[0]['ge']}}
-        @endif @endif
+        @endif
     </a>
     <div class="flex">
         <a
