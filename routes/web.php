@@ -34,7 +34,7 @@ Route::prefix('/admin')->middleware(['setLocale', 'auth'])->group(function () {
 	Route::prefix('/{locale}/{movie}')->group(function () {
 		Route::delete('/delete', [MoviesController::class, 'destroy'])->name('movie_delete');
 		Route::get('/edit', [MoviesController::class, 'edit'])->name('movie_edit');
-		Route::patch('/update', [MoviesController::class, 'update']);
+		Route::patch('/update', [MoviesController::class, 'update'])->name('movie_update');
 	});
 	Route::prefix('/{locale}')->group(function () {
 		Route::get('/upload-movie', [MoviesController::class, 'index'])->name('movie_upload');

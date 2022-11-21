@@ -3,7 +3,7 @@
         __("admin.back")
     }}</a>
     <form
-        action="/admin/{{Config::get('app.locale')}}/{{$movies->id}}/update"
+        action="{{route('movie_update', ['locale' => Config::get('app.locale'), 'movie' => $movies->id])}}"
         method="POST"
         class="w-1/3 mx-auto"
     >
