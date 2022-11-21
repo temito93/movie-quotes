@@ -20,7 +20,7 @@ Route::prefix('/home')->group(function () {
 });
 
 //Show Login Form
-Route::get('/login', [SessionsController::class, 'create'])->middleware('guest')->name('login');
+Route::view('/login', 'sessions.create')->middleware('guest')->name('login');
 
 //Login User
 Route::post('/sessions', [SessionsController::class, 'authenticate'])->middleware('guest');

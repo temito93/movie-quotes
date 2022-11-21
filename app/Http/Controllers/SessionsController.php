@@ -7,12 +7,6 @@ use Illuminate\Support\Facades\Config;
 
 class SessionsController extends Controller
 {
-	//Login Form
-	public function create()
-	{
-		return view('sessions.create');
-	}
-
 	//Login User
 	public function authenticate(ValidateUserRequest $request)
 	{
