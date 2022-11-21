@@ -2,11 +2,8 @@
     @php
         $locale = Config::get('app.locale');
         $thisUrl = url()->current().'/';
-        if (app()->getlocale() == 'en') {
-            $newUrl  = str_replace('/en/', '/ge/', $thisUrl);
-        }else{
-            $newUrl  = str_replace('/ge/', '/en/', $thisUrl);
-        }
+        $newUrlEn = str_replace('/ge/','/en/', $thisUrl);
+        $newUrlGe = str_replace('/en/', '/ge/', $thisUrl);
     @endphp
 
     <div>
@@ -56,12 +53,12 @@
                     <div
                         class="{{Config::get('app.locale') == 'ge' ? 'text-neutral-900 bg-white' : 'text-white'}} border rounded-full px-2 cursor-pointer"
                     >
-                        <a href="{{ $newUrl }}">ka</a>
+                        <a href="{{ $newUrlGe }}">ka</a>
                     </div>
                     <div
                         class="{{Config::get('app.locale') == 'en' ? 'text-neutral-900 bg-white' : 'text-white'}} border rounded-full px-2 cursor-pointer"
                     >
-                        <a href="{{ $newUrl }}">en</a>
+                        <a href="{{ $newUrlEn }}">en</a>
                     </div>
                 </div>
             </div>
