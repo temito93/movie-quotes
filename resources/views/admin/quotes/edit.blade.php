@@ -1,10 +1,11 @@
 <x-dashboard>
     <section class="pb-10">
-        <a href="/admin/{{Config::get('app.locale')}}/quotes">{{
-            __("admin.back")
-        }}</a>
+        <a
+            href="{{route('show_quotes', ['locale' => Config::get('app.locale')])}}"
+            >{{ __("admin.back") }}</a
+        >
         <form
-            action="/admin/{{Config::get('app.locale')}}/{{$quote->id}}/update_quote"
+            action="{{route('update_quote', ['locale' => Config::get('app.locale'), 'quote' => $quote->id])}}"
             method="POST"
             class="w-1/3 mx-auto"
             enctype="multipart/form-data"
@@ -13,12 +14,12 @@
             <x-form.input
                 name="body_eng"
                 value="{{$quote->getTranslations('body')[0]['en']}}"
-                >{{__('admin.newQuoteNameEn')}}</x-form.input
+                >{{ __("admin.newQuoteNameEn") }}</x-form.input
             >
             <x-form.input
                 name="body_geo"
                 value="{{$quote->getTranslations('body')[0]['ge']}}"
-                >{{__('admin.newQuoteNameGe')}}</x-form.input
+                >{{ __("admin.newQuoteNameGe") }}</x-form.input
             >
 
             @php foreach($movie_name as $current_movie)@endphp
@@ -31,9 +32,7 @@
                 <option value="{{$current_movie->id}}" selected>
                     @if(Config::get('app.locale') == 'en')
                     {{ ucwords($current_movie->getTranslations('title')[0]['en']) }}
-                    @endif
-
-                    @if(Config::get('app.locale') == 'ge')
+                    @endif @if(Config::get('app.locale') == 'ge')
                     {{ ucwords($current_movie->getTranslations('title')[0]['ge']) }}
                     @endif
                 </option>

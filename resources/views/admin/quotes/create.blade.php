@@ -1,7 +1,7 @@
 <x-dashboard>
     <section>
         <h2 class="uppercase font-semibold mb-5 text-xl">{{__('admin.uploadQuotes')}}</h2>
-        <form action="/admin/{{Config::get('app.locale')}}/quotes" method="POST" class="w-1/3 mx-auto" enctype="multipart/form-data">
+        <form action="{{route('create_quote', ['locale' => Config::get('app.locale')])}}" method="POST" class="w-1/3 mx-auto" enctype="multipart/form-data">
             @csrf
             <x-form.input name="body_eng" value="{{old('body_eng')}}">{{__('admin.quoteNameEn')}}</x-form.input>
             <x-form.input name="body_geo" value="{{old('body_geo')}}">{{__('admin.quoteNameGe')}}</x-form.input>

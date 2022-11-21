@@ -15,12 +15,12 @@
     </a>
     <div class="flex">
         <a
-            href="/admin/{{Config::get('app.locale')}}/{{$movie->id}}/edit"
+            href="{{route('movie_edit', ['locale' => Config::get('app.locale'), 'movie' => $movie->id])}}"
             class="mr-4 text-blue-400 hover:text-blue-900"
             >{{ __("admin.edit") }}</a
         >
         <form
-            action="/admin/{{Config::get('app.locale')}}/{{$movie->id}}/delete"
+            action="{{route('movie_delete', ['locale' => Config::get('app.locale'), 'movie' => $movie->id])}}"
             method="POST"
         >
             @csrf @method('DELETE') @if(Config::get('app.locale') == 'en')

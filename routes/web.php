@@ -16,7 +16,7 @@ Route::get('/', function () {
 //Home Page
 Route::prefix('/home')->group(function () {
 	Route::get('/{locale}', [MoviesController::class, 'show'])->name('homepage');
-	Route::get('/{locale}/movie/{id}', [MoviesController::class, 'movie']);
+	Route::get('/{locale}/movie/{id}', [MoviesController::class, 'movie'])->name('current_movie');
 });
 
 //Show Login Form
@@ -32,20 +32,20 @@ Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth
 Route::prefix('/admin')->middleware(['setLocale', 'auth'])->group(function () {
 	Route::get('/main/{locale}', [AdminController::class, 'show'])->name('dashboard');
 	Route::prefix('/{locale}/{movie}')->group(function () {
-		Route::delete('/delete', [MoviesController::class, 'destroy']);
+		Route::delete('/delete', [MoviesController::class, 'destroy'])->name('movie_delete');
 		Route::get('/edit', [MoviesController::class, 'edit'])->name('movie_edit');
 		Route::patch('/update', [MoviesController::class, 'update']);
 	});
 	Route::prefix('/{locale}')->group(function () {
 		Route::get('/upload-movie', [MoviesController::class, 'index'])->name('movie_upload');
-		Route::post('/movies', [MoviesController::class, 'store']);
+		Route::post('/movies', [MoviesController::class, 'store'])->name('store_movie');
 		Route::get('/quotes', [QuotesController::class, 'index'])->name('show_quotes');
 		Route::get('/upload-quotes', [QuotesController::class, 'show'])->name('quote_upload');
-		Route::post('/quotes', [QuotesController::class, 'store']);
+		Route::post('/quotes', [QuotesController::class, 'store'])->name('create_quote');
 		Route::prefix('/{quote}')->group(function () {
 			Route::get('/edit_quote', [QuotesController::class, 'edit'])->name('quote_edit');
-			Route::patch('/update_quote', [QuotesController::class, 'update']);
-			Route::delete('/delete_quote', [QuotesController::class, 'destroy']);
+			Route::patch('/update_quote', [QuotesController::class, 'update'])->name('update_quote');
+			Route::delete('/delete_quote', [QuotesController::class, 'destroy'])->name('delete_quote');
 		});
 	});
 });
