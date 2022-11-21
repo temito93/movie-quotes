@@ -15,7 +15,7 @@
                 <div class="mt-5 flex flex-1 flex-col">
                     <nav class="flex-1 space-y-1 px-2 pb-4">
                         <a
-                            href="/admin/main/{{ $locale }}"
+                            href="{{route('dashboard', ['locale' => $locale])}}"
                             class="text-white group hover:bg-indigo-600 flex items-center px-2 py-2 text-sm rounded-md"
                         >
                            <x-svg.movie-dashboard />
@@ -23,7 +23,7 @@
                         </a>
 
                         <a
-                            href="/admin/{{ $locale }}/quotes"
+                            href="{{route('show_quotes', ['locale' => $locale])}}"
                             class="hover:bg-indigo-600 text-white group flex items-center px-2 py-2 text-sm rounded-md"
                         >
                            <x-svg.quote-dashboard />
@@ -31,7 +31,7 @@
                         </a>
 
                         <a
-                            href="/admin/{{ $locale }}/upload-movie"
+                            href="{{route('movie_upload', ['locale' => $locale])}}"
                             class="text-indigo-100 hover:bg-indigo-600 group flex items-center px-2 py-2 text-sm font-medium rounded-md"
                         >
                            <x-svg.upload-movie />
@@ -39,7 +39,7 @@
                         </a>
 
                         <a
-                            href="/admin/{{ $locale }}/upload-quotes"
+                            href="{{route('quote_upload', ['locale' => $locale])}}"
                             class="text-indigo-100 hover:bg-indigo-600 group flex items-center px-2 py-2 text-sm font-medium rounded-md"
                         >
                             <!-- Heroicon name: outline/folder -->
