@@ -16,7 +16,7 @@ class QuotesController extends Controller
 	{
 		App::setLocale($locale);
 		return view('admin.quotes.index', [
-			'quotes' => Quote::latest()->get(),
+			'quotes' => Quote::latest()->paginate(10),
 		]);
 	}
 
